@@ -1,6 +1,6 @@
 package lab4p2_kevinbanegas;
 
-public class Piezas {
+public abstract class Piezas implements ValidarMovimientos{
     protected char[] coordsI;
     protected char[] coordsM;
     protected char nombre;
@@ -39,6 +39,7 @@ public class Piezas {
     public String toString() {
         return "Piezas{" + "coordsI=" + coordsI + ", coordsM=" + coordsM + ", nombre=" + nombre + '}';
     }
-    
+
+    public abstract boolean validar(char [][] tablero);
     
 }

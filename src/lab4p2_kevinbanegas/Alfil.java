@@ -1,9 +1,9 @@
 
 package lab4p2_kevinbanegas;
 
-public class Caballo extends Piezas{
+public class Alfil extends Piezas{
 
-    public Caballo(int x, int y, char nombre, boolean color) {
+    public Alfil(int x, int y, char nombre, boolean color) {
         super(x, y, nombre, color);
     }
 
@@ -14,10 +14,7 @@ public class Caballo extends Piezas{
 
     @Override
     public boolean validar(char[][] tablero) {
-        return true;
+     return true;   
     }
-    
-   
-    
     
 }

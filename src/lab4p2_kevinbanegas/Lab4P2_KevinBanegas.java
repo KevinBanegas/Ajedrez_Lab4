@@ -43,8 +43,13 @@ public class Lab4P2_KevinBanegas {
         boolean flag = true;
         System.out.print("Ingrese la instruccion: ");
         String ins = lea.next();
-        tablero =movimiento(ins, tablero);
-        imprimir(tablero);
+        if(((Piezas)tablero[7][2]).validar(ins, tablero)==true){
+            tablero =movimiento(ins, tablero);
+            imprimir(tablero);
+        } else{
+            System.out.println("Movimiento invalida.");
+        }
+        
         while(flag ==true){ // while para las jugadas
             
         }

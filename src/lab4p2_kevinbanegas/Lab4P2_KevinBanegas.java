@@ -75,7 +75,7 @@ public class Lab4P2_KevinBanegas {
         int x2 = Integer.parseInt(x22);
         int y1=0;
         int y2=0;
-        char carNuevo=mover.charAt(0);
+        
         switch(mover.charAt(1)){
             case 'a':{
                y1=1;
@@ -118,12 +118,13 @@ public class Lab4P2_KevinBanegas {
             }
             break;
         }
+        Object var = temp[x1][y1];
         for (int i = 0; i < temp.length; i++) {
             for (int j = 0; j < temp.length; j++) {
                 if(i==x1 && j==y1){
                     temp[x1][y1]=' ';
                 } else if(i==x2 && j==y2){
-                    temp[x2][y2]=carNuevo;
+                    temp[x2][y2]=var;//((Piezas)var).getNombre();
                 }
             }
         }

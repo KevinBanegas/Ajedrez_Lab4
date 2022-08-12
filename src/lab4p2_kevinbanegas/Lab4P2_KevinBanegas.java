@@ -41,19 +41,67 @@ public class Lab4P2_KevinBanegas {
         imprimir(tablero);
         
         boolean flag = true;
-        System.out.print("Ingrese la instruccion: ");
-        String ins = lea.next();
-        if(((Piezas)tablero[7][2]).validar(ins, tablero)==true){
+        while(flag ==true){ // while para las jugadas
+            System.out.print("Ingrese la instruccion: ");
+            String ins = lea.next();
+            
+            
+            String x11 ="";
+            x11 += ins.charAt(3);
+            int x1 = Integer.parseInt(x11);
+            int y1=0;
+
+            switch(ins.charAt(2)){
+                case 'a':{
+                   y1=1;
+
+                }
+                break;
+                case 'b':{
+                   y1=2;
+
+                }
+                break;
+                case 'c':{
+                   y1=3;
+
+                }
+                break;
+                case 'd':{
+                   y1=4;
+
+                }
+                break;
+                case 'e':{
+                   y1=5;
+
+                }
+                break;
+                case 'f':{
+                   y1=6;
+
+                }
+                break;
+                case 'g':{
+                   y1=7;
+
+                }
+                break;
+                case 'h':{
+                   y1=8;
+
+                }
+                break;
+            }
+            
+            if(((Piezas)tablero[x1][y1]).validar(ins, tablero)==true){
             tablero =movimiento(ins, tablero);
             imprimir(tablero);
-        } else{
-            System.out.println("Movimiento invalida.");
-        }
-        
-        while(flag ==true){ // while para las jugadas
-            
-        }
-    }
+            } else{
+                System.out.println("Movimiento invalida.");
+            }
+        }//fin while
+    }//fin main
     
     public static void imprimir(Object[][] tablero){
         for(int i=0; i<tablero.length; i++){

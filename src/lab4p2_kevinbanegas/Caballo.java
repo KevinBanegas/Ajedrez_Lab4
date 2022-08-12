@@ -12,11 +12,9 @@ public class Caballo extends Piezas{
         return super.toString();
     }
 
-    public boolean validar(Object [][] tablero) {
+    @Override
+    public boolean validar(Object[][] tablero, int a, int b) {
         return true;
     }
-    
-   
-    
     
 }

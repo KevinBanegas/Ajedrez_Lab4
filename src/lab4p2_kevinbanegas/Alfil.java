@@ -13,8 +13,8 @@ public class Alfil extends Piezas{
     }
 
     @Override
-    public boolean validar(Piezas[][] tablero) {
-     return true;   
+    public boolean validar(Object[][] tablero, int a, int b) {
+       return true;
     }
-    
+
 }

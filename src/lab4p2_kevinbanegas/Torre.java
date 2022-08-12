@@ -11,12 +11,10 @@ public class Torre extends Piezas{
     public String toString() {
         return super.toString();
     }
-    
+
     @Override
-    public boolean validar(Piezas[][] tablero) {
+    public boolean validar(Object[][] tablero, int a, int b) {
         return true;
     }
-    
-    
     
 }

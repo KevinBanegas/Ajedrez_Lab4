@@ -12,7 +12,7 @@ public class Dama extends Piezas{
     }
     
     @Override
-    public boolean validar(Piezas[][] tablero, int a, int b) {
+    public boolean validar(Object[][] tablero, int a, int b) {
         return true;
     }
 

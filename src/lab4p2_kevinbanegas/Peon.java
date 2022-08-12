@@ -5,39 +5,16 @@ public class Peon extends Piezas {
     public Peon(int x, int y, char nombre, boolean color) {
         super(x, y, nombre, color);
     }
-    //{' ', 'a1', 'b2', 'c3', 'd4', 'e5', 'f6', 'g7', 'h8'}};
-    //{'1', 'new Torre(1,1,'t',false), '', '', '', '', '', '', ''}};
-    //{'2', '', '', '', '', '', '', '', ''}};
-    //{'3', '', '', '', '', '', '', '', ''}};
-    //{'4', '', '', '', '', '', '', '', ''}};
-    //{'5', '', '', '', '', '', '', '', ''}};
-    //{'6', '', '', '', '', '', '', '', ''}};
-    //{'7', '', '', '', '', '', '', '', ''}};
-    //{'8', '', '', '', '', '', '', '', ''}};
-
     @Override
-    public boolean validar(Piezas[][] tablero) {
-
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 9; j++) {
-                if (i == 2) {
-                    tablero[i][j] = new Peon(i, j, 'p', false);
-                } else if (i == 7) {
-                    tablero[i][j] = new Peon(i, j, 'P', true);
-
-                }
+    public boolean validar(Object[][] tablero, int a, int b) {
+        
+        if((a==x && b==y-1)&&tablero[a][b]==' '){
+            return true;
+        }else if(((a==x-1 || a==x+1) && b==y-1)&& tablero[a][b] instanceof Piezas){
+            if(((Piezas)(tablero[a][b])).getColor()!=((Piezas)(tablero[x][y])).getColor()){
+                return true;
             }
         }
-        Object [][] tablero1 = {{' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',},
-                                  {' ',' ',' ',' ',' ',' ',' ',' ',' ',}};
-
-        return true;
+        return false;
     }
 }

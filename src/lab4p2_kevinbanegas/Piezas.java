@@ -51,6 +51,6 @@ public abstract class Piezas implements ValidarMovimientos{
     }
 
   
-    public abstract boolean validar(Piezas [][] tablero, int a, int b);
+    public abstract boolean validar(Object [][] tablero, int a, int b);
     
 }

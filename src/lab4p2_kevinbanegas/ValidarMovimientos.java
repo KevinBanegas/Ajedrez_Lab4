@@ -1,15 +1,5 @@
 package lab4p2_kevinbanegas;
 
 public interface ValidarMovimientos {
-    public abstract boolean validar(Piezas[][] tablero, int a, int b);
-//               {{'new Peon(, " ", " ", " ", " ", " ", " ", " ", " ", " "},
-//                {" ", "X", " ", " ", " ", "X", " ", " ", " ", " "},
-//                {" ", "X", " ", " ", " ", "X", " ", " ", " ", " "},
-//                {" ", "X", " ", " ", " ", "X", " ", " ", " ", " "},
-//                {" ", "X", "C", "C", "C", "X", " ", " ", " ", " "},
-//                {" ", "X", "X", "X", "X", "X", " ", " ", " ", " "},
-//                {" ", " ", " ", " ", " ", " ", " ", " ", " ", " "},
-//                {" ", " ", " ", " ", " ", " ", " ", "R", " ", " "},
-//                {" ", " ", " ", " ", " ", "O", " ", " ", " ", " "},
-//                {" ", " ", " ", " ", " ", " ", " ", " ", " "}};
+    public abstract boolean validar(Object[][] tablero, int a, int b);
 }

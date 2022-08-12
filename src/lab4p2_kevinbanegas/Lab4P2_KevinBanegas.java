@@ -41,6 +41,10 @@ public class Lab4P2_KevinBanegas {
         imprimir(tablero);
         
         boolean flag = true;
+        System.out.print("Ingrese la instruccion: ");
+        String ins = lea.next();
+        tablero =movimiento(ins, tablero);
+        imprimir(tablero);
         while(flag ==true){ // while para las jugadas
             
         }
@@ -59,6 +63,71 @@ public class Lab4P2_KevinBanegas {
             }
             System.out.println();
         }
+    }
+    
+    public static Object[][] movimiento(String mover, Object [][] tablero){
+        Object [][] temp = tablero;
+        String x11 ="";
+        String x22="";
+        x11 += mover.charAt(2);
+        int x1 = Integer.parseInt(x11);
+        x22+=mover.charAt(5);
+        int x2 = Integer.parseInt(x22);
+        int y1=0;
+        int y2=0;
+        char carNuevo=mover.charAt(0);
+        switch(mover.charAt(1)){
+            case 'a':{
+               y1=1;
+               y2=1;
+            }
+            break;
+            case 'b':{
+               y1=2;
+               y2=2;
+            }
+            break;
+            case 'c':{
+               y1=3;
+               y2=3;
+            }
+            break;
+            case 'd':{
+               y1=4;
+               y2=4;
+            }
+            break;
+            case 'e':{
+               y1=5;
+               y2=5;
+            }
+            break;
+            case 'f':{
+               y1=6;
+               y2=6;
+            }
+            break;
+            case 'g':{
+               y1=7;
+               y2=7;
+            }
+            break;
+            case 'h':{
+               y1=8;
+               y2=8;
+            }
+            break;
+        }
+        for (int i = 0; i < temp.length; i++) {
+            for (int j = 0; j < temp.length; j++) {
+                if(i==x1 && j==y1){
+                    temp[x1][y1]=' ';
+                } else if(i==x2 && j==y2){
+                    temp[x2][y2]=carNuevo;
+                }
+            }
+        }
+        return temp;
     }
 
 }

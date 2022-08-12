@@ -7,13 +7,9 @@ public class Rey extends Piezas{
     }
     
     @Override
-    public boolean validar(Object[][] tablero,int a, int b){
-        if(y==1){
-            
-        }else if(y==2){
-            
-        }
-        return true;
+    public boolean validar(String mover, Object[][] tablero){
+       // if(x==a && y==b+1 || x==a && y==b-1 || x==a+1 && y==b || x==a-1 && y==b || )
+        return false;
     }
     
 }

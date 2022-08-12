@@ -6,15 +6,16 @@ public class Peon extends Piezas {
         super(x, y, nombre, color);
     }
     @Override
-    public boolean validar(Object[][] tablero, int a, int b) {
+    public boolean validar(String mover, Object[][] tablero) {
         
-        if((a==x && b==y-1)&&((char)(tablero[a][b]))==' '){
-            return true;
-        }else if(((a==x-1 || a==x+1) && b==y-1)&& tablero[a][b] instanceof Piezas){
-            if(((Piezas)(tablero[a][b])).getColor()!=((Piezas)(tablero[x][y])).getColor()){
-                return true;
-            }
-        }
+//        if((x==a && y==b-1)&& ((tablero[a][b] instanceof Piezas)==false)){
+//            return true;
+//        }else if(((x==a-1 || x==a+1) && b==y-1)&& tablero[a][b] instanceof Piezas){
+//            if(((Piezas)(tablero[a][b])).getColor()!=((Piezas)(tablero[x][y])).getColor()){
+//                return true;
+//            }
+//        }
+        
         return false;
     }
 }

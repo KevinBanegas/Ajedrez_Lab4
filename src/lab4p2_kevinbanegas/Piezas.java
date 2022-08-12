@@ -49,8 +49,8 @@ public abstract class Piezas implements ValidarMovimientos{
     public String toString() {
         return "Piezas{" + "x=" + x + ", y=" + y + ", nombre=" + nombre + ", color=" + color + '}';
     }
-
+    
   
-    public abstract boolean validar(Object [][] tablero, int a, int b);
+    public abstract boolean validar(String mover, Object [][] tablero);
     
 }

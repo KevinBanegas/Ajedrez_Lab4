@@ -13,6 +13,12 @@ public class Lab4P2_KevinBanegas {
         String nombre1 = lea.nextLine();
         System.out.print("Nombre Jugador 2: ");
         String nombre2 = lea.nextLine();
+        Piezas [][] tablero = new Piezas [9][9];
+        
+        boolean flag = true;
+        while(flag ==true){
+            
+        }
     }
 
 }

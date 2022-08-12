@@ -7,7 +7,7 @@ public class Rey extends Piezas{
     }
     
     @Override
-    public boolean validar(char[][] tablero){
+    public boolean validar(Piezas[][] tablero){
         return true;
     }
     

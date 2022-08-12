@@ -1,12 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package lab4p2_kevinbanegas;
 
+public class Dama extends Piezas{
 
-public class Dama {
+    public Dama(int x, int y, char nombre, boolean color) {
+        super(x, y, nombre, color);
+    }
 
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+    
+    @Override
+    public boolean validar(Piezas[][] tablero) {
+        return true;
+    }
+
+
+    
+    
 }

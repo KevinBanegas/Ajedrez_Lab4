@@ -1,30 +1,32 @@
 package lab4p2_kevinbanegas;
 
 public abstract class Piezas implements ValidarMovimientos{
-    protected char[] coordsI;
-    protected char[] coordsM;
+    protected int x;
+    protected int y;
     protected char nombre;
+    protected boolean color;
 
-    public Piezas(char[] coordsI, char[] coordsM, char nombre) {
-        this.coordsI = coordsI;
-        this.coordsM = coordsM;
+    public Piezas(int x, int y, char nombre, boolean color) {
+        this.x = x;
+        this.y = y;
         this.nombre = nombre;
+        this.color = color;
     }
 
-    public char[] getCoordsI() {
-        return coordsI;
+    public int getX() {
+        return x;
     }
 
-    public void setCoordsI(char[] coordsI) {
-        this.coordsI = coordsI;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public char[] getCoordsM() {
-        return coordsM;
+    public int getY() {
+        return y;
     }
 
-    public void setCoordsM(char[] coordsM) {
-        this.coordsM = coordsM;
+    public void setY(int y) {
+        this.y = y;
     }
 
     public char getNombre() {
@@ -35,11 +37,20 @@ public abstract class Piezas implements ValidarMovimientos{
         this.nombre = nombre;
     }
 
-    @Override
-    public String toString() {
-        return "Piezas{" + "coordsI=" + coordsI + ", coordsM=" + coordsM + ", nombre=" + nombre + '}';
+    public boolean getColor() {
+        return color;
     }
 
+    public void setColor(boolean color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Piezas{" + "x=" + x + ", y=" + y + ", nombre=" + nombre + ", color=" + color + '}';
+    }
+
+  
     public abstract boolean validar(char [][] tablero);
     
 }

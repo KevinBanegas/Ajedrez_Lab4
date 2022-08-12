@@ -7,7 +7,12 @@ public class Rey extends Piezas{
     }
     
     @Override
-    public boolean validar(Piezas[][] tablero){
+    public boolean validar(Piezas[][] tablero,int a, int b){
+        if(y==1){
+            
+        }else if(y==2){
+            
+        }
         return true;
     }
     

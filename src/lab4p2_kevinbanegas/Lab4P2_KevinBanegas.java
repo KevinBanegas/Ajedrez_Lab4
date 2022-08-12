@@ -11,7 +11,6 @@ public class Lab4P2_KevinBanegas {
         System.out.println();
         System.out.print("Nombre Jugador 1: ");
         String nombre1 = lea.nextLine();
-        System.out.println();
         System.out.print("Nombre Jugador 2: ");
         String nombre2 = lea.nextLine();
     }

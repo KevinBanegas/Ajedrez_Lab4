@@ -15,6 +15,7 @@ public class Torre extends Piezas{
     @Override
     public boolean validar(String mover,Object[][] tablero) {
         
+        
         return true;
     }
     

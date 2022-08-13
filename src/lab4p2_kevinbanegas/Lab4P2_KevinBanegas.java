@@ -8,6 +8,7 @@ public class Lab4P2_KevinBanegas {
     static Scanner lea = new Scanner(System.in);
     
     public static void main(String[] args) {
+        
         System.out.println();
         System.out.println("La palabra jaquemate tiene el significado de \"se dice cuando está el rey derrotado al final de un partido de ajedrez\" y viene del persa sha mat = \"rey matado\".");
         System.out.print("Nombre Jugador 1: ");
@@ -40,9 +41,12 @@ public class Lab4P2_KevinBanegas {
         System.out.println();
         System.out.println("TABLERO INICIAL: ");
         imprimir(tablero);
-        
+        System.out.println();
+        System.out.println("Nomenclatura para movimiento, EJEMPLO: P|d7-d6");
+        System.out.println();
         boolean flag = true;
         while(flag ==true){ // while para las jugadas
+            try{
             System.out.print("Ingrese la instruccion: ");
             String ins = lea.next();
             
@@ -95,12 +99,20 @@ public class Lab4P2_KevinBanegas {
                 break;
             }
             
-            if(((Piezas)tablero[x1][y1]).validar(ins, tablero)==true){
-            tablero =movimiento(ins, tablero);
-            imprimir(tablero);
-            } else{
-                System.out.println("Movimiento invalida.");
+            
+                if(((Piezas)tablero[x1][y1]).validar(ins, tablero)==true){
+                tablero =movimiento(ins, tablero);
+                imprimir(tablero);
+                } else{
+                    System.out.println("Movimiento invalida.");
+                }
+                System.out.println();
+            } catch(Exception e){
+                System.out.println("Se salio del tablero.");
+                lea = new Scanner(System.in);
             }
+            
+            
         }//fin while
     }//fin main
     

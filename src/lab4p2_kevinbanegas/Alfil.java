@@ -111,26 +111,40 @@ public class Alfil extends Piezas{
             }
             break;
         }
-        
+        int pos1;
+        int pos2;
         int contP=0;
-        int movesD2=x1-x2;
-        int m=movesD2;
-        int xn;
-        int cont1=x1-1;
-        int cont2=y1+1;
-        boolean color1 =((Piezas)tablero[x1][y1]).getColor(); //true blanco
-        while(movesD2>0){ 
-            if(x2==x1-m && y2==y1-m){ // Up-dereha 
-                if((tablero[cont1][cont2] instanceof Piezas) && (color1==((Piezas)tablero[cont1][cont2]).getColor())){
-                    contP++;
-                }
-            }
-            movesD2--;
+        int cont1=1;
+        int cont2=1;
+        
+        if((x1 !=x2) &&(y1!=y2)){ //validacion para solo moverse en diagonal
+          if(x1>x2){ //up-derecha o up-izquierda
+              int moves = x1-x2;
+              if(x2==x1-moves){ //up-izquierda
+                  pos1=x1-cont1;
+                  pos2=y1-cont2;
+                  while(moves>1){
+                      if(tablero[pos1][pos2] instanceof Piezas){
+                         contP++; 
+                      }
+                      cont1++;
+                      cont2++;
+                      moves--;
+                  }
+                  if(contP==0 && (tablero[x2][y2] instanceof Piezas)==false){
+                      return true;
+                  } else if(contP==0 && ((Piezas)tablero[x2][y2]).getColor()!=((Piezas)tablero[x1][y1]).getColor()){
+                      return true;
+                  } else {
+                      return false;
+                  }
+              }
+              
+          }
+        } else {
+            return false;
         }
-        if(contP==0){
-            return true;
-        }
-       return false;
+     return false;
     }
 
 }

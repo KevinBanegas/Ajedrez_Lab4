@@ -89,10 +89,10 @@ public class Peon extends Piezas {
         System.out.println(y1);
         System.out.println(x2);
         System.out.println(y2);
-        if ((y2 == y1 && x2 == x1 - 1) && ((tablero[y1][x1] instanceof Piezas) == true)) {
+        if ((y2 == y1 && x2 == x1 - 1) && ((tablero[x1][y1] instanceof Piezas) == true)) {
             return true;
-        } else if (((y2 == y1 - 1 || y2 == y1 + 1) && x2 == x1 - 1) && tablero[y1][x1] instanceof Piezas) {
-            if (((Piezas) (tablero[y1][x1])).getColor() != ((Piezas) (tablero[y1][x1])).getColor()) {
+        } else if (((y2 == y1 - 1 || y2 == y1 + 1) && x2 == x1 - 1) && tablero[x2][y2] instanceof Piezas) {
+            if (((Piezas) (tablero[x1][y1])).getColor() != ((Piezas) (tablero[x2][y2])).getColor()) {
                 return true;
             }
         }

@@ -95,29 +95,36 @@ public class Torre extends Piezas {
         System.out.println(x2);
         System.out.println(y2);
         if (x2 == x1) {
-            for (int i = y1; i < y2; i++) {
-                if(tablero[i][x2] instanceof Piezas == true){
-                    if(i==y2-1 && (((Piezas)(tablero[i][x2])).getColor()!=((Piezas)(tablero[y1][x1])).getColor())){
+            System.out.println("AAA!");
+            while(y1!=y2){
+                if(tablero[y1][x2] instanceof Piezas == true){
+                    if(y1==y2-1 && (((Piezas)(tablero[y1][x2])).getColor()!=((Piezas)(tablero[y1][x1])).getColor())){
                         return true;
-                    }else if(i!=y2-1){
+                    }else if(y1!=y2-1){
                         return false;
                     }
                 }else{
-                    if(i==y2-1){
+                    if(y1==y2-1){
                         return true;
                     }
                 }
             }
         } else if (y2 == y1) {
-            for (int i = x1; i < x2; i++) {
+            System.out.println("AAA");
+            for (int i = x1+1; i < x2; i++) {
                 if(tablero[y2][i] instanceof Piezas == true){
+                    System.out.println("F");
                     if(((Piezas)(tablero[y2][i])).getColor()!=((Piezas)(tablero[y1][x1])).getColor()){
+                        System.out.println("a");
                         return true;
                     }else if(i!=x2-1){
+                        System.out.println("b");
                         return false;
                     }
                 }else{
+                    System.out.println("F");
                     if(i==x2-1){
+                        System.out.println("c");
                         return true;
                     }
                 }

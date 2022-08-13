@@ -9,6 +9,7 @@ public class Lab4P2_KevinBanegas {
     
     public static void main(String[] args) {
         System.out.println();
+        System.out.println("La palabra jaquemate tiene el significado de \"se dice cuando está el rey derrotado al final de un partido de ajedrez\" y viene del persa sha mat = \"rey matado\".");
         System.out.print("Nombre Jugador 1: ");
         String nombre1 = lea.nextLine();
         System.out.print("Nombre Jugador 2: ");

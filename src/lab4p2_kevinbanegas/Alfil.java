@@ -1,6 +1,8 @@
 
 package lab4p2_kevinbanegas;
 
+import java.awt.Color;
+
 public class Alfil extends Piezas{
 
     public Alfil(int x, int y, char nombre, boolean color) {
@@ -112,11 +114,23 @@ public class Alfil extends Piezas{
         
         int contP=0;
         int movesD2=x1-x2;
-        while(movesD2>0){ // validar diagonal secundaria
-            
+        int m=movesD2;
+        int xn;
+        int cont1=x1-1;
+        int cont2=y1+1;
+        boolean color1 =((Piezas)tablero[x1][y1]).getColor(); //true blanco
+        while(movesD2>0){ 
+            if(x2==x1-m && y2==y1-m){ // Up-dereha 
+                if((tablero[cont1][cont2] instanceof Piezas) && (color1==((Piezas)tablero[cont1][cont2]).getColor())){
+                    contP++;
+                }
+            }
+            movesD2--;
         }
-        
-       return true;
+        if(contP==0){
+            return true;
+        }
+       return false;
     }
 
 }

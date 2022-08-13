@@ -90,44 +90,51 @@ public class Torre extends Piezas {
             break;
         }
 
-        System.out.println(x1);
-        System.out.println(y1);
-        System.out.println(x2);
-        System.out.println(y2);
         if (x2 == x1) {
-            System.out.println("AAA!");
-            while(y1!=y2){
-                if(tablero[y1][x2] instanceof Piezas == true){
-                    if(y1==y2-1 && (((Piezas)(tablero[y1][x2])).getColor()!=((Piezas)(tablero[y1][x1])).getColor())){
-                        return true;
-                    }else if(y1!=y2-1){
+            int dis = Math.abs(y1 - y2);
+            if (y2 < y1) {
+                int temp = 1;
+                while (temp != dis) {
+                    if (tablero[x1][y1 - temp] instanceof Piezas == true) {
                         return false;
                     }
-                }else{
-                    if(y1==y2-1){
-                        return true;
-                    }
+                    temp++;
                 }
+                return true;
+            } else if (y2 > y1) {
+                int temp = 1;
+                while (temp != dis) {
+                    if (tablero[x1][y1 + temp] instanceof Piezas == true) {
+                        return false;
+                    }
+                    temp++;
+                }
+                return true;
             }
+
         } else if (y2 == y1) {
-            System.out.println("AAA");
-            for (int i = x1+1; i < x2; i++) {
-                if(tablero[y2][i] instanceof Piezas == true){
-                    System.out.println("F");
-                    if(((Piezas)(tablero[y2][i])).getColor()!=((Piezas)(tablero[y1][x1])).getColor()){
-                        System.out.println("a");
-                        return true;
-                    }else if(i!=x2-1){
-                        System.out.println("b");
+            int dis = Math.abs(x1 - x2);
+            if (x2 < x1) {
+                int temp = 1;
+                while (temp != dis) {
+                    if (tablero[x1 - temp][y1] instanceof Piezas == true) {
+
+                        return false;
+
+                    }
+                    temp++;
+                }
+                return true;
+            } else if (x2 > x1) {
+                int temp = 1;
+                while (temp != dis) {
+                    if (tablero[x1 + temp][y1] instanceof Piezas == true) {
+
                         return false;
                     }
-                }else{
-                    System.out.println("F");
-                    if(i==x2-1){
-                        System.out.println("c");
-                        return true;
-                    }
+                    temp++;
                 }
+                return true;
             }
         }
         return false;
